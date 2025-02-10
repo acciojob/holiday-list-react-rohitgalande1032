@@ -36,20 +36,16 @@ const App = () => {
     const filteredArr = cityList.filter((city) => city.country === 'India');
     console.log(filteredArr)
     
-  return (
-    
-    <div id="main">
-          {
-           filteredArr.map((location, index) => {
-            return (
-              <ol key={index}>
-                <li key={location.name}>{location.name}</li>
-              </ol>
-            )
-            })
-          }
-    </div>
-  )
+    return (
+      <div id="main">
+        <h2>Holiday List - Indian Cities</h2>
+        <ol>
+          {filteredArr.map((city, index) => (
+            <li key={`location${index + 1}`}>{city.name}</li>
+            ))}
+        </ol>
+      </div>
+    );
 }
 
 export default App
